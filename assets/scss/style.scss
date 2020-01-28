@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+@font-face {
+    font-family: Impact;
+    src: url(fonts/impact.ttf);
+}
+
+//FONTS
+$main-font: 'Lato', sans-serif;
+$header-font: 'Impact';
+
+//FONT-SIZE
+$font-size-h2: 1.905em;
+$font-size-h3: 1.190em;
+$font-size-p: 1em;
+
+//LINE-HEIGHT
+$line-height-h2: 1.25;
+$line-height-h3: 1.25;
+$line-height-p: 1.4;
+
+//FONT-WEIGHT
+$font-weight-h2: 500;
+$font-weight-h3: 600;
+$font-weight-p: 400;
+
+//COLORS
+$primary: #e2bf9f;
+$black: #000;
+$white: #fff;
+$red: #c64327;
+
+.white {
+    color: $white;
+}
+
+.red {
+    color: $red;
+}
+
+.black {
+    color: $black;
+}
+
+//MEDIA-QUERIES
+$breakpoints: (
+    'xs': (min-width: 575px),
+    'sm': (min-width: 767px),
+    'md': (min-width: 992px),
+    'lg': (min-width: 1240px),
+)!default;
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    }
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+    color: $black;
+    font-family: $main-font;
+}
+
+section {
+    display: block;
+    padding: 50px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h2, h3 {
+    margin: 0;
+}
+
+h2 {
+    font-family: $header-font;
+    font-size: $font-size-h2;
+    font-weight: $font-weight-h2;
+    line-height: $line-height-h2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+    font-weight: $font-weight-h3;
+    line-height: $line-height-h3;
+}
+
+p {
+    font-size: $font-size-p;
+    font-weight: $font-weight-p;
+    line-height: $line-height-p;
+    margin-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include respond-to('xs') {
+        max-width: 550px;
+    }
+
+    @include respond-to('sm') {
+        max-width: 740px;
+    }
+
+    @include respond-to('md') {
+        max-width: 960px;
+    }
+
+    @include respond-to('lg') {
+        max-width: 1200px;
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    @include respond-to('sm') {
+        flex-direction: row;
+    }
+}
+
+.col-1 {
+    max-width: 8.333333%;
+}
+
+.col-2 {
+    max-width: 16.666667%;
+}
+
+.col-3 {
+    max-width: 25%;
+}
+
+.col-4 {
+    max-width: 33.333333%;
+}
+
+.col-5 {
+    max-width: 41.666667%; 
+}
+
+.col-6 {
+    max-width: 50%;
+}
+
+.col-7 {
+    max-width: 58.333333%;
+}
+
+.col-8 {
+    max-width: 66.666667%;
+}
+
+.col-9 {
+    max-width: 75%;
+}
+
+.col-10 {
+    max-width: 83.333333%;
+}
+
+.col-11 {
+    max-width: 91.666667%;
+}
+
+.col-12 {
+    max-width: 100%;
+}
+
+.col-1, 
+.col-2, 
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    width: 100%;
+    padding: 0 15px;
+}
+
+//FONTS-MOBILE
+
+body {
+    font-size: 14px;
+
+    @include respond-to('sm') {
+        font-size: 16px;
+    }
+
+    @include respond-to('md') {
+        font-size: 18px;
+    }
+
+    @include respond-to('lg') {
+        font-size: 21px;
+    }
+}
+
+//HEADER
+header {
+    text-align: center;
+    padding: 15px;
+    background-color: $primary;
+}
+
+#section_1 {
+    background-image: url(../img/hero_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+
+    @include respond-to('sm') {
+        min-height: 810px;
+    }
+
+    .left {
+        .text {
+            text-align: center;
+            max-width: 300px;
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $white;
+                opacity: .8;
+                z-index: -1;
+            }
+    
+            p {
+                margin: 0;
+            }
+        }
+
+        .img_holder {
+            max-width: 300px;
+        }
+    }
+}
