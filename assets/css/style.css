@@ -567,4 +567,73 @@ header {
     width: 380px;
   }
 }
+
+#section_3 {
+  background-image: url(../img/section3_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+}
+
+@media (min-width: 1240px) {
+  #section_3 {
+    background-position: top;
+  }
+}
+
+#section_3 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 767px) {
+  #section_3 .container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+#section_3 .container .text {
+  text-align: center;
+  max-width: 300px;
+}
+
+@media (min-width: 575px) {
+  #section_3 .container .text {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 767px) {
+  #section_3 .container .text {
+    max-width: 534px;
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  #section_3 .container .text {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 1240px) {
+  #section_3 .container .text {
+    max-width: 800px;
+  }
+}
+
+#section_3 .container .text h2 {
+  margin-bottom: 15px;
+}
+
+#section_3 .container .text .doctor_Bednarek {
+  margin-bottom: 0;
+}
 /*# sourceMappingURL=style.css.map */
