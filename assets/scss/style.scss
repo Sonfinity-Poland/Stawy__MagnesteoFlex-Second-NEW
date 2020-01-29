@@ -28,6 +28,8 @@ $primary: #e2bf9f;
 $black: #000;
 $white: #fff;
 $red: #c64327;
+$red-light: #de967d;
+$gray: #b2b2b2;
 
 .white {
     color: $white;
@@ -113,6 +115,7 @@ p {
     font-weight: $font-weight-p;
     line-height: $line-height-p;
     margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .container {
@@ -149,70 +152,6 @@ p {
     }
 }
 
-.col-1 {
-    max-width: 8.333333%;
-}
-
-.col-2 {
-    max-width: 16.666667%;
-}
-
-.col-3 {
-    max-width: 25%;
-}
-
-.col-4 {
-    max-width: 33.333333%;
-}
-
-.col-5 {
-    max-width: 41.666667%; 
-}
-
-.col-6 {
-    max-width: 50%;
-}
-
-.col-7 {
-    max-width: 58.333333%;
-}
-
-.col-8 {
-    max-width: 66.666667%;
-}
-
-.col-9 {
-    max-width: 75%;
-}
-
-.col-10 {
-    max-width: 83.333333%;
-}
-
-.col-11 {
-    max-width: 91.666667%;
-}
-
-.col-12 {
-    max-width: 100%;
-}
-
-.col-1, 
-.col-2, 
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12 {
-    width: 100%;
-    padding: 0 15px;
-}
-
 //FONTS-MOBILE
 
 body {
@@ -238,24 +177,53 @@ header {
     background-color: $primary;
 }
 
+//SECTION_1
 #section_1 {
     background-image: url(../img/hero_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+    position: relative;
 
     @include respond-to('sm') {
+        min-height: 530px;
+        padding-right: 30px;
+    }
+
+    @include respond-to('md') {
         min-height: 810px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url(../img/triangle.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            bottom: 0;
+            right: 0;
+            width: 420px;
+            height: 420px;
+        }
+    }
+
+    .row {
+        @include respond-to('sm') {
+            justify-content: space-between;
+        }
     }
 
     .left {
+        margin-bottom: 30px;
+
         .text {
             text-align: center;
             max-width: 300px;
             position: relative;
             z-index: 1;
             padding: 20px;
+            margin-bottom: 30px;
     
             &::before {
                 content: '';
@@ -275,7 +243,175 @@ header {
         }
 
         .img_holder {
-            max-width: 300px;
+            max-width: 250px;
+            margin: 0 auto;
+
+            @include respond-to('md') {
+                max-width: 350px;
+            }
+        }
+    }
+
+    .right {
+        background-color: $white;
+        max-width: 260px;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px 15px 50px 15px;
+        position: relative;
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
+
+        @include respond-to('md') {
+            max-width: 320px;
+        }
+
+        &::before {
+            content: '-70%';
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            background-color: $red;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+
+        p {
+            font-weight: 800;
+            
+            .big_price {
+                font-size: 3em;
+                margin: 0 5px;
+            }
+
+            .small_price {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 8px;
+                    left: -4px;
+                    transform: rotate(-20deg);
+                    width: 100%;
+                    height: 2px;
+                    background-color: $red;
+                }
+            }
+        }
+
+        .border {
+            border: 3px solid $red-light;
+            border-radius: 15px;
+            padding: 20px 20px 30px 20px;
+            position: relative;
+
+            @include respond-to('md') {
+                padding: 20px 20px 50px 20px;
+            }
+
+            .input_group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                label {
+                    color: $gray;
+                    margin-bottom: 5px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                }
+
+                input {
+                    width: 100%;
+                    border: 1px solid $gray;
+                    background-color: $gray;
+                    border-radius: 5px;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        #form_btn {
+            border: 3px solid $white;
+            border-radius: 10px;
+            background-color: $red;
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 8px;
+            width: 100%;
+            position: absolute;
+            bottom: -24px;
+            left: 12px;
+            max-width: 200px;
+            box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
+
+            @include respond-to('md') {
+                max-width: 260px;
+            }
+        }
+    }
+}
+
+//ICON-BAR
+#icon_bar {
+    background-color: $primary;
+    padding: 20px;
+
+    @include respond-to('md') {
+        padding: 10px;
+    }
+
+    .row {
+        @include respond-to('md') {
+            justify-content: space-around;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 200px;
+            margin-bottom: 30px;
+
+            @include respond-to('sm') {
+                margin-bottom: 0;
+                max-width: 250px;
+            }
+
+            @include respond-to('md') {
+                flex-direction: row;
+                text-align: left;
+                max-width: 300px;
+                margin-right: 10px;
+            }
+
+            .icon {
+                max-width: 70px;
+                margin-bottom: 10px;
+
+                @include respond-to('md') {
+                    margin-right: 10px;
+                }
+            }
+
+            span {
+                font-weight: 600;
+                margin-bottom: 0;
+                font-size: 16px;
+            }
         }
     }
 }
