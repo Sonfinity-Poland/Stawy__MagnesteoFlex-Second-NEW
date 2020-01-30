@@ -175,6 +175,9 @@ header {
     text-align: center;
     padding: 15px;
     background-color: $primary;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
 }
 
 //SECTION_1
@@ -188,11 +191,18 @@ header {
 
     @include respond-to('sm') {
         min-height: 530px;
-        padding-right: 30px;
     }
 
     @include respond-to('md') {
         min-height: 810px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    
+    @include respond-to('lg') {
+        padding-left: 80px;
+        padding-right: 80px;
+    
 
         &::after {
             position: absolute;
@@ -303,7 +313,12 @@ header {
                     width: 100%;
                     height: 2px;
                     background-color: $red;
+
+                    @include respond-to('lg') {
+                        top: 12px;
+                    }
                 }
+
             }
         }
 
@@ -350,6 +365,7 @@ header {
             font-weight: 600;
             letter-spacing: 1.5px;
             padding: 8px;
+            cursor: pointer;
             width: 100%;
             position: absolute;
             bottom: -24px;
@@ -568,3 +584,81 @@ header {
         }
     }
 }
+
+//SECTION_4
+#section_4 {
+    background-image: url(../img/section4_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 753px;
+
+    .box {
+        position: relative;
+
+        @include respond-to('md') {
+            margin: 0 auto;
+            max-width: 60%;
+        }
+
+        @include respond-to('lg') {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 200px;
+                height: 255px;
+                background-image: url(/assets/img/neodymium.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -33%;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 250px;
+                height: 380px;
+                background-image: url(/assets/img/product.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -39%;
+            }
+        }
+
+        .text {
+            text-align: center;
+            color: $white;
+            position: relative;
+            z-index: 1;
+            padding: 15px;
+            margin-bottom: 30px;
+
+            @include respond-to('md') {
+                text-align: left;
+            }
+    
+            &::before {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: $black;
+                opacity: .6;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+    
+            h2 {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
