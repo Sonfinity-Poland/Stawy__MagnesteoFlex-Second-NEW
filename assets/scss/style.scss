@@ -727,3 +727,290 @@ header {
         }
     }
 }
+
+//SECTION_6
+#section_6 {
+    background-image: url(../img/section6_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 801px;
+    padding-top: 0;
+    position: relative;
+
+    @include respond-to('md') {
+        &::before {
+            content: '';
+            position: absolute;
+            background-image: url(../img/triangle_left.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 425px;
+            height: 400px;
+            left: 0;
+            bottom: 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url(../img/triangle.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 425px;
+            height: 400px;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+    .headers {
+        text-align: center;
+        margin-bottom: 50px;
+        background-color: $primary;
+        padding-bottom: 10px;
+    }
+
+    .row {
+        @include respond-to('sm') {
+            flex-direction: column;
+        }
+
+        @include respond-to('md') {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+
+    .days {
+        position: relative;
+        z-index: 1;
+        padding: 10px;
+        max-width: 260px;
+        margin-bottom: 50px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+            opacity: .7;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .border {
+            border: 3px dashed #c16511;
+            border-radius: 10px;
+            padding: 20px;
+
+            span {
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
+
+        @include respond-to('sm') {
+            max-width: 320px;
+        }
+    }
+
+    .right {
+        background-color: $white;
+        max-width: 260px;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px 15px 50px 15px;
+        position: relative;
+        margin-bottom: 50px;
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
+
+        @include respond-to('sm') {
+            max-width: 320px;
+        }
+
+        &::before {
+            content: '-70%';
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            background-color: $red;
+            border-radius: 50%;
+            width: 75px;
+            height: 75px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $white;
+            font-weight: 600;
+            font-size: 1.4em;
+        }
+
+        p {
+            font-weight: 800;
+            
+            .big_price {
+                font-size: 3em;
+                margin: 0 5px;
+            }
+
+            .small_price {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 8px;
+                    left: -4px;
+                    transform: rotate(-20deg);
+                    width: 100%;
+                    height: 2px;
+                    background-color: $red;
+
+                    @include respond-to('lg') {
+                        top: 12px;
+                    }
+                }
+
+            }
+        }
+
+        .border {
+            border: 3px solid $red-light;
+            border-radius: 15px;
+            padding: 20px 20px 30px 20px;
+            position: relative;
+
+            @include respond-to('sm') {
+                padding: 20px 20px 50px 20px;
+            }
+
+            .input_group {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                label {
+                    color: $gray;
+                    margin-bottom: 5px;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                }
+
+                input {
+                    width: 100%;
+                    border: 1px solid $gray;
+                    background-color: $gray;
+                    border-radius: 5px;
+                    padding: 10px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        #form_btn {
+            border: 3px solid $white;
+            border-radius: 10px;
+            background-color: $red;
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            padding: 8px;
+            cursor: pointer;
+            width: 100%;
+            position: absolute;
+            bottom: -24px;
+            left: 12px;
+            max-width: 200px;
+            box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.5);
+
+            @include respond-to('sm') {
+                max-width: 260px;
+            }
+        }
+    }
+
+    .img_holder {
+        max-width: 260px;
+
+        @include respond-to('sm') {
+            max-width: 260px;
+        }
+    }
+}
+
+//SECTION_7
+#section_7 {
+    background-color: $primary;
+    padding: 10px 0;
+
+    .counter_wrapper {
+        .counter {
+            .row {
+                justify-content: center;
+            }
+
+            .box {
+                color: $white;
+                text-align: center;
+                margin-bottom: 20px;
+
+                @include respond-to('sm') {
+                    max-width: 180px;
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+            }
+
+            #clockdiv{
+                font-family: sans-serif;
+                color: #fff;
+                display: inline-block;
+                font-weight: 100;
+                text-align: center;
+                font-size: 30px;
+            }
+            
+            #clockdiv > div{
+                padding: 10px;
+                border-radius: 3px;
+                background: $white;
+                display: inline-block;
+            }
+            
+            #clockdiv div > span{
+                padding: 15px;
+                border-radius: 3px;
+                background: $primary;
+                display: inline-block;
+            }
+            
+            .smalltext{
+                padding-top: 5px;
+                font-size: 16px;
+                color: $primary;
+
+                @include respond-to('md') {
+                    font-size: 20px;
+                }
+
+                @include respond-to('lg') {
+                    font-size: 26px;
+                }
+            }
+            
+        }
+    }
+}
