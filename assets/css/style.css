@@ -687,7 +687,7 @@ header {
     position: absolute;
     width: 200px;
     height: 255px;
-    background-image: url(../assets/img/neodymium.png);
+    background-image: url(../img/neodymium.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -701,7 +701,7 @@ header {
     position: absolute;
     width: 250px;
     height: 380px;
-    background-image: url(../assets/img/product.png);
+    background-image: url(../img/product.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
