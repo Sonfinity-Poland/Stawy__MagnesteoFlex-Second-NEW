@@ -467,9 +467,14 @@ header {
     padding: 0;
 
     .header_black {
-        background-color: $black;
+        background-color: #8F8C8E;
         padding: 20px;
         text-align: center;
+        color: #fff;
+
+        h2 {
+            margin-bottom: 20px;
+        }
     }
 
     .content {
@@ -488,12 +493,6 @@ header {
 
         .text_left {
             margin-bottom: 40px;
-            position: relative;
-
-            @include respond-to('md') {
-                max-width: 640px;
-                text-align: left;
-            }
 
             h2 {
                 margin-top: 20px;
@@ -717,6 +716,12 @@ header {
         width: 90%;
         margin: 0 auto;
 
+        .slick-track {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .slick-prev:before,
         .slick-next:before {
             display: none;
@@ -804,7 +809,7 @@ header {
         &::after {
             content: '';
             position: absolute;
-            background-image: url(../img/triangle.png);
+            background-image: url(../img/triangle_right.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -1020,6 +1025,7 @@ header {
                 
                 h2 {
                     line-height: 1;
+                    font-size: 31px;
                 }
 
                 @include respond-to('sm') {
@@ -1046,7 +1052,7 @@ header {
             }
             
             #clockdiv div > span{
-                padding: 15px;
+                padding: 10px;
                 border-radius: 3px;
                 background: $black;
                 display: inline-block;
@@ -1060,12 +1066,7 @@ header {
                 @include respond-to('md') {
                     font-size: 20px;
                 }
-
-                @include respond-to('lg') {
-                    font-size: 26px;
-                }
             }
-            
         }
     }
 }
