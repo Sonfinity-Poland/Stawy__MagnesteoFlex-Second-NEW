@@ -790,7 +790,12 @@ header {
     background-size: cover;
     background-position: center;
     padding-top: 0;
+    padding-bottom: 40px;
     position: relative;
+
+    @include respond-to('md') {
+        padding-bottom: 0;
+    }
 
     @include respond-to('md') {
         &::before {

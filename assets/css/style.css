@@ -917,7 +917,14 @@ header h2 {
   background-size: cover;
   background-position: center;
   padding-top: 0;
+  padding-bottom: 40px;
   position: relative;
+}
+
+@media (min-width: 992px) {
+  #section_6 {
+    padding-bottom: 0;
+  }
 }
 
 @media (min-width: 992px) {
