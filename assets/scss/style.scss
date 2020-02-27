@@ -9,9 +9,9 @@ $main-font: 'Lato', sans-serif;
 $header-font: 'Impact';
 
 //FONT-SIZE
-$font-size-h2: 1.905em;
-$font-size-h3: 1.190em;
-$font-size-p: 1em;
+$font-size-h2: 1.705em;
+$font-size-h3: 1em;
+$font-size-p: 0.8em;
 
 //LINE-HEIGHT
 $line-height-h2: 1.25;
@@ -155,11 +155,7 @@ p {
 //FONTS-MOBILE
 
 body {
-    font-size: 14px;
-
-    @include respond-to('sm') {
-        font-size: 16px;
-    }
+    font-size: 16px;
 
     @include respond-to('md') {
         font-size: 18px;
@@ -174,10 +170,14 @@ body {
 header {
     text-align: center;
     padding: 15px;
-    background-color: $primary;
+    background-color: $black;
     position: relative;
     z-index: 1;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+
+    h2 {
+        color: #fff;
+    }
 }
 
 //SECTION_1
@@ -263,14 +263,14 @@ header {
 
                 p {
                     margin-bottom: 20px;
-                    font-size: 20px;
+                    font-size: 18px;
                     font-weight: 700;
                 }
     
                 h2 {
                     text-transform: uppercase;
                     margin-bottom: 20px;
-                    font-size: 37px;
+                    font-size: 32px;
                 }
             }
 
@@ -296,6 +296,7 @@ header {
                     @include respond-to('lg') {
                         margin-right: 30px;
                         max-width: 360px;
+                        margin-bottom: 0;
                     }
 
                     .inner {
@@ -490,7 +491,7 @@ header {
             position: relative;
 
             @include respond-to('md') {
-                max-width: 775px;
+                max-width: 640px;
                 text-align: left;
             }
 
@@ -498,24 +499,28 @@ header {
                 margin-top: 20px;
                 margin-bottom: 10px;
             }
+        }
+
+        .rows_wrapper {
+            position: relative;
 
             .grandpa {
                 display: none;
                 position: absolute;
-                bottom: -206px;
-                right: -160px;
-                width: 208px;
-                height: 514px;
+                
 
                 @include respond-to('md') {
+                    transform: rotateY(180deg);
                     display: block;
+                    bottom: 0;
+                    right: 0;
+                    width: 270px;
                 }
 
                 @include respond-to('lg') {
-                    width: 276px;
-                    height: 576px;
-                    bottom: -206px;
-                    right: -358px;
+                    bottom: 0;
+                    right: 0;
+                    width: 340px;
                 }
             }
         }
@@ -523,12 +528,12 @@ header {
         .row {
 
             @include respond-to('sm') {
-                justify-content: space-around;
+                justify-content: center;
                 align-items: flex-start;
             }
 
             @include respond-to('md') {
-                justify-content: space-between;
+                justify-content: flex-start;
                 align-items: flex-start;
             }
 
@@ -538,6 +543,7 @@ header {
 
                 @include respond-to('sm') {
                     max-width: 230px;
+                    margin: 20px;
                 }
 
                 @include respond-to('md') {
@@ -554,20 +560,6 @@ header {
                     font-weight: 600;
                 }
             }
-    
-            .empty {
-                width: 270px;
-                display: none;
-
-                @include respond-to('md') {
-                    display: block;
-                    width: 300px;
-                }
-
-                @include respond-to('lg') {
-                    width: 380px;
-                }
-            }
         }
     }
 }
@@ -575,7 +567,6 @@ header {
 //SECTION_3
 #section_3 {
     background-color: $primary;
-    min-height: 600px;
     position: relative;
 
     .doctor {
@@ -590,7 +581,7 @@ header {
         }
 
         @include respond-to('lg') {
-            width: 530px;
+            width: 420px;
         }
     }
 
@@ -641,7 +632,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 753px;
 
     .box {
         position: relative;
@@ -706,7 +696,7 @@ header {
             }
     
             h2 {
-                margin-bottom: 15px;
+                margin-bottom: 0;
             }
         }
     }
@@ -794,7 +784,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 801px;
     padding-top: 0;
     position: relative;
 
@@ -806,8 +795,8 @@ header {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            width: 325px;
-            height: 300px;
+            width: 225px;
+            height: 200px;
             left: 0;
             bottom: 0;
         }
@@ -819,8 +808,8 @@ header {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            width: 325px;
-            height: 300px;
+            width: 225px;
+            height: 200px;
             right: 0;
             bottom: 0;
         }
@@ -1005,10 +994,10 @@ header {
     }
 
     .img_holder {
-        max-width: 260px;
+        max-width: 200px;
 
         @include respond-to('sm') {
-            max-width: 260px;
+            max-width: 230px;
         }
     }
 }
@@ -1016,7 +1005,7 @@ header {
 //SECTION_7
 #section_7 {
     background-color: $black;
-    padding: 25px 0;
+    padding: 15px 0;
 
     .counter_wrapper {
         .counter {
@@ -1046,7 +1035,7 @@ header {
                 display: inline-block;
                 font-weight: 100;
                 text-align: center;
-                font-size: 30px;
+                font-size: 23px;
             }
             
             #clockdiv > div{
